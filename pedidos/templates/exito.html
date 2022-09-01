@@ -1,0 +1,158 @@
+{% extends "nav.html" %} {% load static %} {% block contenidoQueCambia %} 
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Basic -->
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <!-- Site Metas -->
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      
+      <title>Famms - Fashion HTML Template</title>
+      <!-- bootstrap core css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+      <!-- font awesome style -->
+      <link href="{%static 'pedidos/css/font-awesome.min.css'%}" rel="stylesheet" />
+      <!-- Custom styles for this template -->
+      <link href="{%static 'pedidos/css/style.css'%}" rel="stylesheet" />
+      <!-- responsive style -->
+      <link href="{%static 'pedidos/css/responsive.css'%}" rel="stylesheet" />
+   </head>
+   <body class="sub_page">
+         
+      <!-- inner page section -->
+    
+      <!-- end inner page section -->
+      <!-- client section -->
+      <section class="client_section layout_padding">
+         <div class="container">
+            <div class="heading_container heading_center">
+               <h2>
+                  Gracias por tu Compra
+               </h2>
+            </div>
+            {{contexto}}
+            <div id="carouselExample3Controls" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="box col-lg-10 mx-auto">
+                        <div class="img_container">
+                           <div class="img-box">
+                              <div class="img_box-inner">
+                                 <img src="{%static 'pedidos/images/client.jpg'%}" alt="">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="detail-box">
+                           <h5>
+                              Billeteras
+                           </h5>
+                           <h6>
+                              Accesorios
+                           </h6>
+                           <p>
+                            Mantenete informado de las novedades de los nuevos ingresos      
+                        </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="box col-lg-10 mx-auto">
+                        <div class="img_container">
+                           <div class="img-box">
+                              <div class="img_box-inner">
+                                 <img src="{%static 'pedidos/images/client2.jpg'%}" alt="">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="detail-box">
+                           <h5>
+                             Marroquineria
+                           </h5>
+                           <h6>
+                              Cintos
+                           </h6>
+                           <p>
+                             Todo para tu negocio o emprendimiento, no dudes en consultarnos</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="box col-lg-10 mx-auto">
+                        <div class="img_container">
+                           <div class="img-box">
+                              <div class="img_box-inner">
+                                 <img src="{%static 'pedidos/images/client3.jpg'%}" alt="">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="detail-box">
+                           <h5>
+                              Articulos de temporada
+                           </h5>
+                           <h6>
+                              infinito
+                           </h6>
+                           <p>
+                             Visitanos en nuestas redes para estar al tanto de los ultimos ingresos
+                        </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="box col-lg-10 mx-auto">
+                       <div class="img_container">
+                          <div class="img-box">
+                             <div class="img_box-inner">
+                                <img src="{%static 'pedidos/images/client4.jpg'%}" alt="">
+                             </div>
+                          </div>
+                       </div>
+                       <div class="detail-box">
+                          <h5>
+                             Mochilas   
+                          </h5>
+                          <h6>
+                             Bolsos
+                          </h6>
+                          <p>
+                            Visitanos en Cafferata 2113 ciudad de Rosario, envios a todos el pais. 
+                            </p>
+                       </div>
+                    </div>
+                 </div>
+               </div>
+               <div class="carousel_btn_box">
+                  <a class="carousel-control-prev" href="#carouselExample3Controls" role="button" data-slide="prev">
+                  <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                  <span class="sr-only">Anterior</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExample3Controls" role="button" data-slide="next">
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  <span class="sr-only">Siguiente</span>
+                  </a>
+               </div>
+            </div>
+            <div class="heading_container heading_center">
+                <a  class="btn btn-dark" href="{% url 'Tienda' %}">Segui mirando nuestros productos</a>
+            </div>
+         </div>
+         
+      </section>
+     
+      <!-- end client section -->
+      
+           
+      
+      <!-- jQery -->
+      
+   </body>
+</html>
+   
+</body>
+</html>
+{%endblock%}

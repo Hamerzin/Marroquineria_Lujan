@@ -1,0 +1,74 @@
+{% extends "nav2.html" %}
+
+    {% load static %}
+
+    {% block contenidoQueCambia %}
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <br>
+    <br>
+    <br>
+    <br> 
+    <title>Bienvenido a la Tienda</title>
+    <!-- Bootstrap -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Styles -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="alert alert-primary" role="alert">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="row" colspan="5" class="text-center">CARRITO</th>
+    </tr>
+    <tr>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">IMAGEN</th>
+      <th scope="col">PRECIO</th>
+      <th scope="col">CANTIDAD</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if request.session.carrito.items %}
+  {% for key, value in request.session.carrito.items %}
+    <tr>
+      <td>{{value.nombre}}</td>
+      <td colspan="1"><img src="{{value.imagen}}" alt="" style="width: 3%;"></td>
+      <td>{{value.acumulado}}    
+      </td>
+      
+      <td>
+        <a href="{% url 'Add2' value.producto_id %}" class="badge btn btn-dark badge-dark">+</a>
+        <a href="{% url 'Sub' value.producto_id %}" class="badge btn btn-dark badge-dark">-</a>
+        {{value.cantidad}}</td>
+    </tr>
+  {% endfor %}
+  {% else %}
+  <tr>
+      <td colspan="5">
+          <div class="alert alert-danger text-center"> Sin Productos </div>
+      </td>
+  </tr>
+  {% endif %}
+    <tr>
+      <th scope="row" colspan="5" class="text-center">Total: $ {{total_carrito}}</th>
+   
+    
+    </tr>
+  </tbody>
+</table>
+<hr>
+</div>
+<div class="row text-center">
+    <div class="col-6"><a href="{% url 'CLS' %}" class="btn btn-danger">Limpiar</a></div>
+    <div class="col-6"><a href="{% url 'procesar' %}" class="btn btn-success">Guardar</a></div>
+</div>
+<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{%url 'Tienda'%}">Seguir Comprando</a></div>
+        
+<body>
+  {%endblock%}

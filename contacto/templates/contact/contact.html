@@ -1,0 +1,123 @@
+{% extends 'nav.html' %}
+
+{% load static %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block  contenidoQueCambia %}
+
+    
+    <!-- Style -->
+    
+    <link rel="stylesheet" href="{% static 'contacto/fonts/icomoon/style.css'%}">
+
+    <link rel="stylesheet" href="{% static 'contacto/css/owl.carousel.min.css'%}">
+
+    <!-- Bootstrap CSS -->
+    
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'contacto/css/style.css'%}">
+
+    <title>Contacto</title>
+  </head>
+ <main>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mr-auto">
+          <div class="mb-5">
+            <h3 class="text-white mb-4">Visitanos en nuestras REDES</h3>
+            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus blanditiis, perferendis aliquam.</p>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h3 class="text-white h5 mb-3">FACEBOOK</h3>
+              <ul class="list-unstyled mb-5">
+                
+                <a href="https://www.facebook.com/natali.birri" target="_blank"> <img src="{%static 'contacto/images/facebook.png'%}" alt="" style="width:20%;"></a>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h3 class="text-white h5 mb-3">INSTAGRAM</h3>
+              <ul class="list-unstyled mb-5">
+                <a href="https://www.instagram.com/lujan.marroquineria/?hl=es" target="_blank"> <img src="{%static 'contacto/images/instagram.jpg'%}" alt="" style="width:20%;"></a>
+               
+              </ul>
+           
+              </ul>
+            </div>
+            
+          </div>
+          
+        </div>
+
+        <div class="col-lg-6">
+          <div class="box">
+            <h3 class="heading">Mandanos un mensaje</h3>
+            <h3 class="heading">Hoy es {{ myDate|date:'d-m-Y H:i' }}</h3>
+            <h3 class="heading">En el plazo de 24 horas nos contactamos con vos</h3>
+            {% if 'ok' in request.GET %}
+            <p><b>Su mensaje se ha enviado correctamente, en breve nos pondremos en contacto con usted.</b></p>
+        {% endif %}
+            <form class="mb-5" method="post" id="contactForm" name="contactForm">{% csrf_token %}
+              <div class="row">
+                
+                <div class="col-md-12 form-group">
+                  <label for="name" class="col-form-label">Name</label>
+                  <div class="input-group">
+                    {{form.name}}
+                </div>
+                {{form.name.errors}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="email" class="col-form-label">Email</label>
+                  <div class="input-group">
+                    {{form.email}}
+                </div>
+                {{form.email.errors}}
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-12 form-group">
+                  <label for="message" class="col-form-label">Message</label>
+                  <div class="input-group">
+                    {{form.content}}
+                </div>
+                {{form.content.errors}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <input type="submit" value="Send Message" class="btn btn-block btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                </div>
+              </div>
+            </form>
+
+            <div id="form-message-warning mt-4"></div> 
+            <div id="form-message-success">
+              Your message was sent, thank you!
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  {%endblock%}
+    
+
+    <script src="{% static 'contacto/js/jquery.validate.min.js'%}"></script>
+    <script src="{% static 'contacto/js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'contacto/js/popper.min.js'%}"></script>
+    <script src="{% static 'contacto/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'contacto/js/main.js'%}"></script>
+  </body>
+</main>
+

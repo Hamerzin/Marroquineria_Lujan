@@ -1,0 +1,96 @@
+{% extends "nav.html" %}
+
+{% load static  %}
+
+{% block contenidoQueCambia %}
+<!doctype html>
+
+<!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
+<html lang="es">
+    
+   
+
+    
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+          <div class="container">
+    
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li>Sobre Nosotros</li>
+            </ol>
+            <h2>Detalles</h2>
+    
+          </div>
+        </section><!-- End Breadcrumbs -->
+    
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="portfolio-details" class="portfolio-details">
+          <div class="container">
+    
+            <div class="row gy-4">
+    
+              <div class="col-lg-8">
+                <div class="portfolio-details-slider swiper">
+                  <div class="swiper-wrapper align-items-center">
+    
+                    <div class="swiper-slide">
+                      <img src="{% static 'assets/img/portfolio/portfolio-details-1.jpg' %}" alt="">
+                    </div>
+    
+                    <div class="swiper-slide">
+                      <img src="{% static 'assets/img/portfolio/portfolio-details-2.jpg' %}" alt="">
+                    </div>
+    
+                    <div class="swiper-slide">
+                      <img src="{% static 'assets/img/portfolio/portfolio-details-3.jpg' %}" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{% static 'assets/img/portfolio/portfolio-details4.jpg' %}" alt="">
+                      </div>
+                   
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <h2>MISION Y OBJETIVOS</h2>
+                  <p>
+                    Nuestro objetivo es crecer para pasar de ser una PYME a ser una empresa poder distribuir productos mayoristas alrededor del pais
+                    y a su vez expandir todos nuestros rubros para poder ofrecerles mas varidad a nuestros clientes.
+                    Actualmente realizamos envios a todos el pais mediante correo o encomiendas, teniendo hasta el momento experiencias favorables de nuestros clientes
+                  </p>
+
+    
+                </div>
+              </div>
+    
+              <div class="col-lg-4">
+                <div class="portfolio-info">
+                  <h3>QUIENES SOMOS?</h3>
+                  <ul>
+                    <li><strong>Somos un Pyme de la ciudad de Rosario dedicada a la venta por menor de productos de Marroquineria
+                        articulos de temporada juguetes y ropa deportiva
+                    </strong>
+                    <br>
+                    
+                    <li><strong>Ubicacion</strong>: Nos encontramos en la ciudad de Rosario Argentina</li>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.796621202115!2d-60.67769453510795!3d-32.956378579710304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7abfeb2960147%3A0x68349d4c4f642727!2sLuj%C3%A1n%20marroquineria!5e0!3m2!1ses-419!2sar!4v1659320912084!5m2!1ses-419!2sar" width="300" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </ul>
+                </div>
+                <div class="portfolio-description">
+                  <h2>Historia</h2>
+                  <p>
+                    Nacimos como un emprendimiento online basado en la demanda de los clientes, empezamos a vender de forma minorista y al momento estamos desarrollando la parte mayorista con mucho exito. Actualmente nos encontramoas emplazados
+                    en el barrrio 5 esquinas una zona muy comercial de nuestra ciudad.
+                  </p>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </section><!-- End Portfolio Details Section -->
+    
+      </main><!-- End #main -->
+</html>
+{%endblock%}

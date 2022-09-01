@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<img src="https://d22fxaf9t8d39k.cloudfront.net/def0c12cc08547715b9c3552c5120eaf2972286935f1465a1d8c6233fcb10f1059616.png" alt="" style="width: 50%;">
+<body>
+   HOLA NATI RECIBISTE UNA NUEVA COMPRA EN LA PAGINA WEB ESTOS SON LOS DATOS DE COMPRA <br/>
+
+    DETALLES <br/>
+    
+    NOMBRE:  {{nombre}} <br/>
+    
+    
+    APELLIDO: {{apellido}} <br/>
+    
+    El usuario {{nombreusuario}} <br/>
+    Realizo el Numero de pedido: {{pedido.id}} <br/>
+    Su mail es : {{email}} <br/>
+    Pedido Realizado <br/>
+    {% for pedido in lineas_pedido %} {{pedido}}. 
+    <img src="{{pedido.imagen}}"  alt="" style="width:50%;"> <br>{% endfor %}
+    {% for pedidos in shipping %} <br>
+    Telefono: {{pedidos.telefono}} <br/>
+    <a href="https://api.whatsapp.com/send?phone={{pedidos.telefono}}">WhatsAPP del Cliente</a>  <br/>   
+    Direccion: {{pedidos.address}} <br/>
+    Ciudad: {{pedidos.city}}   <br/>
+    Provincia: {{pedidos.state}}<br/>
+    CP: {{pedidos.zipcode}}<br/>
+    Pais: {{pedidos.country}}<br/>
+    {% endfor %}
+
+    Monto Total del pedido $ {{total.total_carrito}}
+    
+
+    <h1 style="color:blueviolet">Recorda contactarte lo mas pronto posible para coordinar el pago y entrega</h1>
+    
+</body>
+</html>

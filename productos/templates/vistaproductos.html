@@ -1,0 +1,94 @@
+{% extends "nav2.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'productos/fonts/icomoon/style.css'%}">
+
+    <link rel="stylesheet" href="{% static 'productos/css/owl.carousel.min.css'%}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'productos/css/bootstrap.min.css'%}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'productos/css/style.css'%}">
+
+    <title>Productos Disponibles</title>
+  </head>
+  <body>
+  
+     
+  <div class="content">
+        <div class="container">
+      <h2 class="mb-5">Productos Disponibles</h2>
+      <br>
+      <a href="../admin/appblog/productos/">Agregar Productos desde ADMIN</a>
+      <br> 
+      <a href="{%url 'New'%}">Agregar Productos desde FORMULARIO</a> 
+       <div class="table-responsive">
+            <table class="table custom-table">
+           
+            <thead>
+            
+            <tr>
+              
+              <th scope="col">Tipo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Foto</th>
+              <th scope="col">Codigo</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          {% for prod in prods %}
+          <tbody>
+            
+            <tr scope="row">
+
+                
+                      
+                      <td>
+                        {{ prod.tipo }}
+                      </td>
+                      <td>{{ prod.nombre }} </td>
+                      <td>
+                        <img src="{{ prod.imagen.url }}" class="img-responsive" style="width: 30%;" /> 
+                      </td>
+                      <td> Codigo</td>
+                      <td> {{ prod.precio }} </td>
+                      <td><a href="{% url 'Detalle' prod.id %}">Detalle</a><br><a href="{% url 'Delete' prod.id %}">Borrar</a><br>
+                        <a href="{% url 'Editar' prod.id %}">Editar</a>  </td>
+            
+            </tr>
+           
+                       
+          </tbody>
+          {% endfor %}
+        </table>
+        
+      </div>
+
+
+    </div>
+
+  </div>
+    
+    
+
+    <script src="{% static 'productos/js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'productos/js/popper.min.js'%}"></script>
+    <script src="{% static 'productos/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'productos/js/main.js'%}"></script>
+  </body>
+</html>
+
+    
+{%endblock%}

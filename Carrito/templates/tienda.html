@@ -1,0 +1,141 @@
+    {% extends "nav2.html" %}
+
+    {% load static %}
+
+    {% block contenidoQueCambia %}
+   
+    <!DOCTYPE html>
+
+    <html lang="es">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="{% static 'productos/alt/css/style.css'%}"/>
+		 <link href="{% static 'productos/css/main.css'%}" rel="stylesheet" />
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4824472377319159"
+       crossorigin="anonymous"></script>
+        <link href="{% static 'productos/store/css/font-awesome.min.css'%}" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="{% static 'productos/store/css/style.css'%}" rel="stylesheet" />
+        <!-- responsive style -->
+        <link href="{% static 'productos/store/css/responsive.css'%}" rel="stylesheet" />
+     
+        <!-- Styles -->
+       
+    </head>
+    <body>
+<!-- end inner page section -->
+<!-- product section -->
+<section class="product_section layout_padding">
+   <div class="container">
+      <div class="heading_container heading_center">
+         <div id="breadcrumb" class="section">
+            <!-- container -->
+            <div class="container">
+               <!-- row -->
+               <div class="row">
+                  <div class="col-md-12">
+                     <ul class="breadcrumb-tree">
+                        <li class="active"><a href="{% url 'Tienda' %}">Catalogo</a></li>
+                        <li><a href="{% url 'buscarTipoliq' %}" name="liquidaciones" id="liquidaciones">Liquidaciones</a></li>
+                        <li><a href="{% url 'buscarMarro'%}">Marroquineria</a></li>
+                        <li><a href="{% url 'buscarTipo' %}" name="nombre" id="accesorios">Accesorios</a></li>
+                       
+                        
+                        <li><a href="{% url 'buscarMochilas' %}">Mochilas</a></li>
+                        <li><a href="#">Ropa deportiva</a></li>
+                        <li><a href="#">Medias</a></li>
+                        <li><a href="#">Lentes</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- /row -->
+            </div>
+            <!-- /container -->
+         </div>
+         <div class="s004">
+          
+            
+                  <div class="col-md-16" style="margin-left:auto; margin-right:auto">
+                      <form action="{% url 'buscar'%}" method="POST"> {%csrf_token%} 
+
+    <fieldset>
+                          <legend>Que estas buscando?</legend>
+                          <div class="inner-form">
+                            <div class="input-field">
+                              <input class="form-control" name="search" id="search" style="width:350px;" type="search" arial-label="search" placeholder="Ingresa tu busqueda" />
+                                <button class="btn-search" type="search">
+                        
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-12 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                  <span>{{resultados}} {{nombre}} {{mensaje}} {{vista}}</span> 
+                          <div class="suggestion-wrap">
+                           
+                          </div>
+                        </fieldset>
+                      </form>
+                    </div>
+                  </div>
+      </div>   
+      
+        <div class="container">
+
+            <div class="row">
+        
+              
+                <div class="col-12 align-self-center">    
+                  <div style="float:right">{% include "carrito.html" %} </div>
+            </div>
+            <div class="row">
+            	{% for prod in productos %}
+               <div class="col-sm-6 col-md-4 col-lg-3">
+                  
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="{% url 'Detalle' prod.id %}" class="option1">
+                           Detalle
+                           </a>
+                           <a href="{% url 'Add' prod.id %}" class="option2">
+                           Agregar Carrito
+                           </a>
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <img src="{{ prod.imagen.url }}" alt="">
+                     </div>
+                     <div class="detail-box">
+                      <div style="margin: 0 auto;">  
+                      <h5>
+                            
+                          {{ prod.nombre }}
+                        </h5>
+                      </div>
+                        
+                     </div>
+                     <div style="text-align: center;">
+                     <h6>
+                      PRECIO ${{ prod.precio }}
+                    </div>
+                   </h6>
+                  </div>
+                  
+               </div>
+               {%endfor%}
+            </div>
+        </div>
+
+        <!-- Bootstrap -->
+        <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+       
+    
+    
+    
+    
+
+{%endblock%}
+    

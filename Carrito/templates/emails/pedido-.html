@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    GRACIAS POR REALIZAR LA COMPRA EN MARROQUINERIA LUJAN <br/>
+
+    DETALLES <br/>
+
+    El usuario {{nombreusuario}} <br/>
+    Realizo el Numero de pedido: {{pedido.id}} <br/>
+    Su mail es Email de Usuario: {{email}} <br/>
+    Pedido Realizado <br/>
+    {% for pedido in lineas_pedido %} {{pedido}}. <br> {% endfor %}
+  
+
+    Monto Total del pedido $ {{total.total_carrito}}
+    <img src="http://www.lujanmarroquineria.tk/static/assets/img/portfolio/portfolio-details-1.jpg" alt="" style="width: 50%;">
+
+
+    
+</body>
+</html>

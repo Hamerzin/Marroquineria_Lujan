@@ -1,0 +1,50 @@
+{% extends "nav.html" %}
+
+{% load static  %}
+
+{% block contenidoQueCambia %}
+
+<style>.errorlist{color:red;} label{display:none}</style>
+<br><br><br><br><br><br>
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+          <div class="row">
+            <!-- Previa del avatar -->
+            <div class="col-md-2">
+              {% if request.user.profile.avatar %}
+                <img src="{{request.user.profile.avatar.url}}" class="img-fluid">
+                <p class="mt-1">¿Borrar? <input type="checkbox" id="avatar-clear" name="avatar-clear" /></p>
+              {% else %}
+                <img src="{% static 'registration/img/no-avatar.jpg' %}" class="img-fluid">
+              {% endif %}
+            </div>
+            <!-- Formulario -->
+            <div class="col-md-10"> 
+              <h3>Por favor complete su perfil, es opcional pero te brindara una mejor experiencia de usuario</h3>
+              <h3>Perfil de {{user}}</h3>
+              <h6>Ingrese su imagen de perfil</h6>
+              <input type="file" name="avatar" class="form-control-file mt-3" id="id_avatar" value="">
+              {{ form.first_name }}
+              {{ form.last_name }}
+              {{ form.bio }}
+              {{ form.link }}
+              <input type="email" value="{{request.user.email}}" class="form-control mt-3" readonly>
+              <p class="mt-3">
+                Si deseas editar tu email haz clic <a href="{% url 'profile_email' %}">aquí</a>.<br>
+                Y si quieres cambiar tu contraseña haz clic <a href="{% url 'password_change' %}">aquí</a>.
+              </p>
+              <input type="submit" class="btn btn-primary btn-block mt-3" value="Actualizar">
+              <div class=""><a class="btn btn-outline-dark mt-auto" href="{% url 'messenger:list' %}">Mensajes Recibidos</a></div>
+    
+            </div>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

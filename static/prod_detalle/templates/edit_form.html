@@ -1,0 +1,113 @@
+{% extends "nav2.html" %}
+
+{% load static  %}
+
+{% block contenidoQueCambia %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v1 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static 'registro2/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css'%}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'registro2/css/style.css'%}">
+	</head>
+<br>
+<br><br><br><br>
+	<body>
+       
+                
+		<div class="wrapper" style="background-image: url('https://colorlib.com/etc/regform/colorlib-regform-17/images/bg-registration-form-1.jpg');">
+			<div class="inner">
+				<div class="image-holder">
+          <img src="{%static 'registro2/images/220px-Leathertools.jpg'%}" alt="" style="width: 90%;">
+				</div>
+				<form method="POST" enctype="multipart/form-data">{%csrf_token%}
+                    {% if form.errors %}
+                    <p class=" label label-danger">
+                       los datos no son correctos
+                        Por favor intente de nuevo.
+                    </p>
+                {% endif %}
+                <h3 class=" label label-danger">
+                    Bienvenido a la plataforma de Carga
+                </h3>
+										<div class="form-group">
+						<div class="" id="tipo" name="tipo" ><p>Categoria {{form.tipo}}</p></div> 
+						<div class="" id="nombre" name="nombre" ><p>Nombre  {{form.nombre}}</p></div> 
+					</div>
+					<div class="form-wrapper">
+						<div class="" id="tipo" name="Imagen" ><p>Imagen</p>{{form.imagen}}</div>
+            <div class="" id="tipo" name="tipo" ><p>imagen actual</p><img src="{{object.imagen.url}}" alt="" style="width: 30%;"></div>  
+					</div>
+					<div class="form-wrapper">
+						<br>
+            <p>precio            {{form.precio}}</p>
+					</div>
+										<div class="form-wrapper">
+						<p>Stock- {{form.stock}}</p>
+					</div>
+					<div class="form-wrapper">
+						<p>Codigo {{form.codigo}}</p>
+					</div>
+					<div class="form-wrapper">
+						<p>Codigo {{form.detalle}}</p>
+					</div>
+					<button type="submit">ACTUALIZAR 
+						<i class="zmdi zmdi-arrow-right"></i>
+                       
+					</button>
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'administracion'%}">ADMINISTRACION</a></div>
+				</form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

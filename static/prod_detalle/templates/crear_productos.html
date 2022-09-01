@@ -1,0 +1,118 @@
+{% extends "nav2.html" %}
+
+{% load static  %}
+
+{% block contenidoQueCambia %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Registro de productos</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static 'registro2/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css'%}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'registro2/css/style.css'%}">
+	</head>
+<br>
+<br><br><br><br>
+	<body>
+       
+                
+		<div class="wrapper" style="background-image: url('https://colorlib.com/etc/regform/colorlib-regform-17/images/bg-registration-form-1.jpg');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="{%static 'registro2/images/220px-Leathertools.jpg'%}" alt="" style="width: 90%;">
+				</div>
+				<form method="POST" enctype="multipart/form-data">{%csrf_token%}
+                    {% if form.errors %}
+                    <p class=" label label-danger">
+                       los datos no son correctos
+                        Por favor intente de nuevo.
+                    </p>
+                {% endif %}
+                <h3 class=" label label-danger">
+                   
+                </h3>
+					<h3>Agregue un nuevo Producto</h3>
+					<div class="form-group">
+						<input type="text" placeholder="Tipo de Producto" class="form-control" id="tipo" name="tipo" >
+						<input type="text" placeholder="Nombre Prod" class="form-control" id="nombre" name="nombre">
+					</div>
+					<div class="form-wrapper">
+            {{form.imagen}}
+						
+						</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Precio" class="form-control"id="precio" name="precio">
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					
+					<div class="form-wrapper">
+						<input type="text" placeholder="stock" class="form-control"id="stock" name="stock">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Codigo prod" class="form-control"id="codigo" name="codigo">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<textarea name="detalle" id="detalle" cols="38" placeholder="Agrega detalles del producto"></textarea></p>
+						<i class="zmdi zmdi-email"></i>
+						</div>
+					<button type="submit">AGREGAR A CATALOGO
+						<i class="zmdi zmdi-arrow-right"></i>
+                       
+					</button>
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'administracion'%}">ADMINISTRACION</a></div>
+				</form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
