@@ -13,6 +13,7 @@ django-js-asset==2.0.0
 django-registration==3.3
 django-storages==1.13.1
 future==0.16.0
+gunicorn==20.1.0
 idna==3.3
 jmespath==0.10.0
 mysqlclient==2.1.0
