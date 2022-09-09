@@ -162,11 +162,12 @@ MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST = 'smtp-relay.sendinblue.com'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'b12a6d170926d0'
-EMAIL_HOST_PASSWORD = '5a7daaa3bd0143'
-EMAIL_PORT = '2525'
+EMAIL_HOST_USER = 'dipaolo@gmail.com'
+EMAIL_HOST_PASSWORD = 'Dj4S3mkFAZwf2KYV'
+EMAIL_PORT = '587'
+DEFAULT_FROM_EMAIL = 'lujan@lujanmarroquineria.tk'
 
 
 STATICFILES_DIRS=( os.path.join(BASE_DIR, 'static'),)
